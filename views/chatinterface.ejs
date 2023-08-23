@@ -1,0 +1,76 @@
+<style>
+    .maincontainer{
+        height:100vh;
+        width:100vw;
+        background-color:gainsboro;
+        font-family: Consolas;
+    }
+    .message{
+        margin-top:3px;
+        background-color:wheat;
+        width:auto;
+        padding:5px;
+        border-radius:10px;
+        border:2px solid blue;
+    }
+    .left{
+        float: left;
+        clear: both;
+    }
+    .right{
+        float:right;
+        clear: both;
+    }
+    .newuser{
+        text-align: center;
+        font-size:large;
+        font-weight: 500;
+        margin-top:10px;
+        margin-right:40%;
+        margin-bottom:10px;
+}
+</style>
+
+<html>
+    <head>
+        <title>Live Chat App</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="maincontainer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12" style="background-color: aliceblue;display: flex;">
+                        <input type="hidden" value="<%=data.sname%>" id="joinname" name="joinname">
+                        <img src="/images/livechat.png" width="60px">
+                        <div style="margin-left:10px;margin-top:12px;font-size:22;font-weight:600;">Welcome to Live Chat App</div>
+                    </div>
+                </div>
+
+                <div class="row" style="background-color:whitesmoke;margin-top:10px;padding:10px;height:400px;overflow-y:auto;">
+                    <div class="col-sm-12" id="receivecontainer">
+                    </div>
+                </div>
+
+                <div class="row" style="background-color:khaki;margin-top: 10px;padding:5px;">
+                    <div class="col-sm-10">
+                        <form action="#" id="sendcontainer">
+                            <input type="text" style="margin-top:10px;" id="messageinp" name="messageinp" class="form-control" placeholder="Write message here...." autocomplete="off">
+                        
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="submit" style="margin-top:10px;width:90%;" value="Send" class="btn btn-danger">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/javascripts/socketclientside.js"></script>
+    </body>
+</html>
